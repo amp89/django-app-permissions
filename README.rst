@@ -1,0 +1,1 @@
+https://github.com/amp89/django-app-permissions
