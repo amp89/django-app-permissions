@@ -6,7 +6,7 @@ Home-page: https://github.com/amp89/django-app-permissions
 Author: Alex Peterson
 Author-email: contact@alexpeterson.tech
 License: MIT
-Download-URL: #
+Download-URL: https://github.com/amp89/django-app-permissions/blob/master/dist/django-app-permissions-0.0.0.tar.gz
 Description: https://github.com/amp89/django-app-permissions
 Platform: UNKNOWN
 Requires-Python: >=3.6
