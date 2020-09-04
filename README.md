@@ -1,6 +1,8 @@
 # Django App Permissions
 
 ## What / Why
+The purpose of this app is to automatically create a `Group` for each app, and manage authentication through that app by those `Group`s within the admin panel.
+
 This is an Django app created to work with Django, DRF (Django Rest Framework), and Django DRF Advanced Token (Another Django app I wrote: https://pypi.org/project/django-drf-advanced-token/).
 
 DRF Advanced Token is not necessary, but if it is not used there must be some middlewhere before Django App Permissions to add the user to the request object in order for this to work with DRF.
