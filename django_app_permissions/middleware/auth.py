@@ -13,7 +13,7 @@ class AppAuthentication:
         app_name = view_func.__module__.split(".")[0].lower()
         # if not app_name.lower().startswith("django.contrib"):
         request.user_in_group = False
-        if app_name in settings.DEVELOPER_INSTALLED_APPS:
+        if app_name in settings.ACCESS_CONTROLLED_INSTALLED_APPS:
             if ((hasattr(settings,"ALLOW_ALL_SUPERUSER") and settings.ALLOW_ALL_SUPERUSER )and request.user.is_superuser ) \
                     or request.user.groups.filter(name=app_name).exists():
                 request.user_in_group = True

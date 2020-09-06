@@ -13,15 +13,15 @@ DRF Advanced Token is not necessary, but if it is not used there must be some mi
 
 1.b (recommended) - Pip install Django DRF Advanced Token.  This package was tested using DRF Advanced Token, and I recommend using it: `pip install --upgrade django-drf-advanced-token`
 
-2. Move the user installed apps (the one's you created with `python manage.py startapp`) to a new setting called `DEVELOPER_INSTALLED_APPS` *before* `INSTALLED_APPS` in the project `settings.py`
+2. Move the user installed apps (the one's you created with `python manage.py startapp`) to a new setting called `ACCESS_CONTROLLED_INSTALLED_APPS` *before* `INSTALLED_APPS` in the project `settings.py`
 ```python
-DEVELOPER_INSTALLED_APPS = [
+ACCESS_CONTROLLED_INSTALLED_APPS = [
     'test_app_one',
     'test_app_two',
 ]
 ```
 
-3. add ` + DEVELOPER_INSTALLED_APPS` to the end of the `INSTALLED_APPS` list in the project `settings.py`
+3. add ` + ACCESS_CONTROLLED_INSTALLED_APPS` to the end of the `INSTALLED_APPS` list in the project `settings.py`
 ```python
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -34,7 +34,7 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'drf_advanced_token',
     'django_app_permissions'
-] + DEVELOPER_INSTALLED_APPS
+] + ACCESS_CONTROLLED_INSTALLED_APPS
 ```
 
 4. Add the middleware to `MIDDLEWARE` in the project `settings.py`:
