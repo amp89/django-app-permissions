@@ -42,6 +42,7 @@ INSTALLED_APPS = [
 4. Add the middleware to `MIDDLEWARE` in the project `settings.py`:
 ```
 MIDDLEWARE = [
+    ...
     'django_app_permissions.middleware.auth.AppAuthentication',
     'drf_advanced_token.middleware.auth.ProcessToken', # Include this only if you are using Django DRF Advanced Token
 ]
