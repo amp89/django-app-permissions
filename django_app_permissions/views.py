@@ -29,12 +29,11 @@ class APIAppAuthView(APIView):
 
 class AppAuthView(LoginRequiredMixin, View):
     def dispatch(self, request, *args, **kwargs):
-        print("APP AUTH")
         if not request.user_in_group:
             if not hasattr(settings,"REDIRECT_403_URL"):
                 return HttpResponseForbidden()
             else:
-                return redirect(reverse(settings.REDIRECT_403_URL))
+                return redirect(reverse(settings.REDIRECT_403_URL)+f"?group_id={request.group_id}")
             
         else:
             return super(__class__,self).dispatch(request,*args, **kwargs) 

@@ -1,12 +1,12 @@
 Metadata-Version: 1.2
 Name: django-app-permissions
-Version: 2.1.0
+Version: 2.2.0
 Summary: Automatic app level authentication for django apps using django
 Home-page: https://github.com/amp89/django-app-permissions
 Author: Alex Peterson
 Author-email: contact@alexpeterson.tech
 License: MIT
-Download-URL: https://github.com/amp89/django-app-permissions/blob/master/dist/django-app-permissions-2.1.0.tar.gz
+Download-URL: https://github.com/amp89/django-app-permissions/blob/master/dist/django-app-permissions-2.2.0.tar.gz
 Description: https://github.com/amp89/django-app-permissions
 Platform: UNKNOWN
 Requires-Python: >=3.6
