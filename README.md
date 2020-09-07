@@ -95,3 +95,6 @@ Add `ALLOW_ALL_SUPERUSER = True` to the project `settings.py` to allow superuser
 #### Unregister `Group` from the admin page.
 If you would like to remove `Groups` from the admin page, add `UNREGISTER_GROUP = True` to the project `settings.py`
 
+#### Redirect on 403 in UI views
+If you would like the user to be redirected somewhere, like an access request page, instead of getting a 403 AppAuthView, add `REDIRECT_403_URL` to the project `settings.py`.
+`REDIRECT_403_URL` must be the **name** of a view that you would like the user to be redirected to.

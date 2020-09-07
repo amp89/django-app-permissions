@@ -1,4 +1,6 @@
 from django.shortcuts import render
+from django.shortcuts import redirect
+from django.shortcuts import reverse
 from django.views import View
 from rest_framework.views import APIView
 from rest_framework import authentication, permissions
@@ -12,8 +14,9 @@ from rest_framework.response import Response
 # Create your views here.
 from django.views import View
 from django.http import HttpResponse
+from django.conf import settings
+from django.contrib.auth.mixins import LoginRequiredMixin
 
-# Create your views here.
 
 class APIAppAuthView(APIView):
     authentication_classes = [authentication.TokenAuthentication]    
@@ -24,10 +27,14 @@ class APIAppAuthView(APIView):
         else:
             return super(__class__,self).dispatch(request,*args, **kwargs) 
 
-class AppAuthView(View):
+class AppAuthView(LoginRequiredMixin, View):
     def dispatch(self, request, *args, **kwargs):
         print("APP AUTH")
         if not request.user_in_group:
-            return HttpResponseForbidden()
+            if not hasattr(settings,"REDIRECT_403_URL"):
+                return HttpResponseForbidden()
+            else:
+                return redirect(reverse(settings.REDIRECT_403_URL))
+            
         else:
             return super(__class__,self).dispatch(request,*args, **kwargs) 
