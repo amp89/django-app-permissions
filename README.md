@@ -54,7 +54,9 @@ If you want groups to be automatically created for each app, in your project `ur
 from django.core.management import call_command
 call_command("resolve_app_groups")
 ```
-This will automatically create a group for each app whenver Django starts. 
+This will automatically create a group for each app installed in `ACCESS_CONTROLLED_INSTALLED_APPS` whenver Django starts. 
+
+__YOU MUST ADD THE APPS THAT YOU WANT TO CONTROL ACCESS TO `ACCESS_CONTROLLED_INSTALLED_APPS`, not `INSTALLED_APPS`__
 
 If you would rather do it manually, call `python manage.py resolve_app_groups`.
 
