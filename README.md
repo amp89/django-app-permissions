@@ -8,7 +8,7 @@ This is an Django app created to work with Django, DRF (Django Rest Framework), 
 DRF Advanced Token is not necessary, but if it is not used there must be some middlewhere before Django App Permissions to add the user to the request object in order for this to work with DRF.
 
 ## How to Install
-
+NOTE: Make sure the base django stuff is migrated before adding this to the project!
 1.a Pip install everything you need.
   - New Project: `pip install --upgrade django-app-permissions`
   - Existing Project: `pip install --upgrade django djangorestframework django-app-permissions`
