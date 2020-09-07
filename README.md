@@ -100,4 +100,5 @@ If you would like to remove `Groups` from the admin page, add `UNREGISTER_GROUP 
 #### Redirect on 403 in UI views
 If you would like the user to be redirected somewhere, like an access request page, instead of getting a 403 AppAuthView, add `REDIRECT_403_URL` to the project `settings.py`.
 `REDIRECT_403_URL` must be the **name** of a view that you would like the user to be redirected to.
-(If you are using DRF Advanced Token Manager (https://github.com/amp89/drf_advanced_token_manager)): `REDIRECT_403_URL='django_app_permissions_access_request.request_access'`
+
+If you are using DRF Advanced Token Manager (https://github.com/amp89/drf_advanced_token_manager) put this to redirect the user to an access request form: `REDIRECT_403_URL='django_app_permissions_access_request.request_access'`
